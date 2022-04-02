@@ -1,0 +1,39 @@
+{
+  "name": "iamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev --respawn App.ts",
+    "start:prod": "node dist/App.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.36",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/imap": "^0.8.35",
+    "@types/node-cron": "^3.0.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@overnightjs/core": "^1.7.6",
+    "@types/mailparser": "^3.4.0",
+    "axios": "^0.26.1",
+    "bluebird": "^3.7.2",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "imap": "^0.8.19",
+    "mailparser": "^3.4.0",
+    "mysql2": "^2.3.3",
+    "node-cron": "^3.0.0",
+    "typeorm": "^0.3.4"
+  }
+}
