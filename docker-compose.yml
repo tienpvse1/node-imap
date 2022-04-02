@@ -1,16 +1,6 @@
 version: "3.4"
 
 services:
-  iamp:
-    image: iamp
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    environment:
-      NODE_ENV: production
-    ports:
-      - 80:8080
-
   db:
     image: mysql
     restart: always
@@ -26,3 +16,16 @@ services:
       - 8080:80
     environment:
       - PMA_ARBITRARY=1
+    depends_on:
+      - db
+  iamp:
+    image: iamp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:8080
+    depends_on:
+      - db
