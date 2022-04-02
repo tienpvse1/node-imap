@@ -19,7 +19,7 @@ export const getEmails = (imapConfig: Config, actions: any) => {
     const imap = new Imap(imapConfig);
     imap.once("ready", () => {
       imap.openBox("INBOX", false, () => {
-        imap.search(["SEEN", ["SINCE", new Date()]], (err, results) => {
+        imap.search(["UNSEEN", ["SINCE", new Date()]], (err, results) => {
           if (err) throw new Error("nothing to fetch");
           try {
             const f = imap.fetch(results, { bodies: "" });
