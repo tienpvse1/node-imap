@@ -26,7 +26,8 @@ services:
     environment:
       NODE_ENV: production
       DB_HOST: db
+      DB_PORT: 3307
     ports:
-      - 8080:8080
+      - 80:8080
     depends_on:
       - db
