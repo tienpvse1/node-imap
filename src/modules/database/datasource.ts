@@ -4,7 +4,7 @@ import { Webhook } from "../webhook/entity/webhook.entity";
 
 export const dataSource = new DataSource({
   type: "mysql",
-  host: "db",
+  host: process.env.DB_HOST,
   port: 3306,
   username: "root",
   password: "123456",

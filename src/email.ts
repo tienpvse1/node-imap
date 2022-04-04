@@ -1,6 +1,6 @@
 import Imap, { Config } from "imap";
 import { simpleParser } from "mailparser";
-
+import { createTransport } from "nodemailer";
 export const generateConfig = (email: string, password: string): Config => {
   return {
     user: email,
@@ -68,4 +68,17 @@ export const getEmails = (imapConfig: Config, actions: any) => {
   } catch (ex) {
     console.log("an error occurred");
   }
+};
+
+export const generateTransporter = (email: string, password: string) => {
+  return createTransport({
+    host: "smtp.gmail.com",
+    port: 993,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: email,
+      pass: password,
+    },
+    service: "Gmail",
+  });
 };
